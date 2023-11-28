@@ -10,8 +10,49 @@ Au focus sur le champ, vide-le et change sa couleur de fond. Lorsqu'on clique en
 
 // Un seul champ
 
+document.addEventListener('DOMContentLoaded', function() {
+    const prenomInput = document.getElementById('prenom');
+    const nomInput = document.getElementById('nom');
+
+    prenomInput.addEventListener('focus', function() {
+        this.value = '';
+        this.style.backgroundColor = 'lightblue';
+    });
+
+    prenomInput.addEventListener('blur', function() {
+        this.style.backgroundColor = 'transparent';
+    });
+
+    nomInput.addEventListener('focus', function (){
+        this.value='';
+        this.style.backgroundColor = 'lightblue'
+    })
+    nomInput.addEventListener('blur', function (){
+        this.style.backgroundColor='transparent';
+    })
+});
+
+
+
 
 // Deux champs
 
 
 // Plusieurs champs
+document.addEventListener('DOMContentLoaded', function() {
+    const champsText = document.querySelectorAll('input[type="text"]');
+
+    function champFocus(event) {
+        event.target.value = '';
+        event.target.style.backgroundColor = 'lightblue';
+    }
+
+    function champBlur(event) {
+        event.target.style.backgroundColor = 'transparent';
+    }
+
+    champsText.forEach(function(field) {
+        field.addEventListener('focus', champFocus);
+        field.addEventListener('blur', champBlur);
+    });
+});

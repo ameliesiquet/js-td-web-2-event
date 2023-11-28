@@ -14,3 +14,16 @@ EXERCICE 6 : Change couleur (3)
 
 // ÉTAPE 2 : version avec deux écouteurs
 
+
+function changeBackgroundColor() {
+    const colorInput = document.getElementById('colorChoice').value;
+    document.body.style.backgroundColor = colorInput;
+}
+
+document.getElementById('colorBtn').addEventListener('click', changeBackgroundColor);
+
+
+document.getElementById('colorForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    changeBackgroundColor();
+});

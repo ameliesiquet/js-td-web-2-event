@@ -15,6 +15,41 @@
 // Autre écriture
 
 
+// 1°) avec une fonction nommée
+function direBonjour() {
+    const prenom = document.getElementById('prenom').value;
+
+    if (prenom !== '') {
+        alert(`Bonjour, ${prenom}! `);
+    } else {
+        alert("Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?");
+    }
+}
+document.getElementById('hello').addEventListener('click', direBonjour);
+
+//2°) avec une fonction anonyme
+document.getElementById('hello').addEventListener('click', function (){
+    const prenom1 = document.getElementById('prenom').value;
+
+    if (prenom1 !==''){
+        alert(`Bonjour, ${prenom1}! `)
+    } else {
+        alert("Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?")
+    }
+})
+
+
+
+// 3°) avec une arrow fonction et une expression conditionnelle
+document.getElementById('hello').addEventListener('click', () => {
+    const prenom2 = document.getElementById('prenom').value;
+
+    const message = prenom2 !== '' ? `Bonjour, ${prenom2}!` : "Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?";
+    alert(message);
+});
+
+
+
 
 
 // Plus court : écriture ES6 avec expression conditionnelle

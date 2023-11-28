@@ -28,6 +28,23 @@ La méthode classique est de créer une variable temporaire, comme ceci :
 
 
 // version de base
+const image = document.querySelector('img');
+
+let originalSrc = image.getAttribute('src');
+let hoverSrc = image.getAttribute('data-hover');
+let isOriginal = true;
+
+image.addEventListener('click', function() {
+    if (isOriginal) {
+        image.setAttribute('src', hoverSrc);
+        image.setAttribute('data-hover', originalSrc);
+    } else {
+        image.setAttribute('src', originalSrc);
+        image.setAttribute('data-hover', hoverSrc);
+    }
+    isOriginal = !isOriginal;
+
+});
 
 
 // BONUS : switch entre les deux images

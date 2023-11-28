@@ -10,9 +10,23 @@ Ta mission est toujours la même : au clic sur un des boutons, colorie la page d
     - BONUS : Une fois que c'est fait, apporte encore une seconde amélioration à ton code : au lieu de faire quatre appels de fonction différés (un pour chaque bouton), parcours la liste des boutons avec une boucle (utilise ici la boucle for… of) et affecte-leur l'écouteur d'événement dans la boucle.
 */
 
+function colorie(event) {
+    const couleur = event.target.getAttribute('data-color');
+    document.body.style.backgroundColor = couleur;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.actions button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', colorie);
+    });
+});
+
+
+
+
 
 
 // BONUS : encore mieux avec la boucle
-
-
 

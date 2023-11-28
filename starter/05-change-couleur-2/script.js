@@ -19,3 +19,27 @@ touche = touche.toUpperCase(); // Pour gérer indifféremment minuscules et maju
  => il existe une méthode plus directe, voir documentation : 
  https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent
 */
+
+document.addEventListener('keypress', function(event) {
+    let couleur;
+
+    switch (event.key.toUpperCase()) {
+        case 'R':
+            couleur = 'red';
+            break;
+        case 'V':
+            couleur = 'green';
+            break;
+        case 'J':
+            couleur = 'yellow';
+            break;
+        case 'B':
+            couleur = 'blue';
+            break;
+        default:
+            console.log(`Touche ${event.key} non gérée`);
+            return; // Sort de la fonction si la touche n'est pas gérée
+    }
+
+    document.body.style.backgroundColor = couleur;
+});

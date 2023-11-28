@@ -5,6 +5,18 @@ Au clic sur le bouton,
 - fais disparaître le bouton
 */
 
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('hello').addEventListener('click', direBonjour = (action) => {
+        const img = document.createElement('img');
+        img.src = 'bonjour.jpg';
+        img.alt = 'Bonjour, toi !';
+
+        document.querySelector('.display').appendChild(img);
+    });
+});
+
+
+
 
 
 /*
@@ -19,6 +31,7 @@ Quand l'événement se déclenche, JavaScript crée un objet Event qui peut êtr
 - recopie le code de l'exercice 3 et ajoute une ligne dans la fonction direBonjour qui affiche dans la console la valeur de currentTarget ;
 - utilise cette information pour adapter le code qui fait disparaître le bouton
 */
+
 
 
 /* N.B. e.currentTarget représente, en français, "la cible du clic", c.-à-d. ici le bouton sur lequel on vient de cliquer, donc le bouton qui a déclenché la fonction.
